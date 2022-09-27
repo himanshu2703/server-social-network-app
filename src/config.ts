@@ -1,0 +1,1 @@
+export const AllowedOrigins = ["http://localhost:3000","https://studio.apollographql.com"]

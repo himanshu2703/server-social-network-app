@@ -4,16 +4,24 @@ import { connectDB } from './db/connect';
 
 import typeDefs from './graphql/typeDefs';
 import resolvers from './graphql/resolvers';
+import { AllowedOrigins } from './config';
+import cors from 'cors';
 
 const auth = require('./middleware/auth');
 
 const PORT = process.env.PORT || 8000;
 
-const app: Application = express();
-
 const mongoUrl = 'mongodb+srv://vishal:ggoel@learning.cvbiciu.mongodb.net/?retryWrites=true&w=majority';
 
 const startServer = async () => {
+    const app: Application = express();
+    app.use(
+		cors({
+			origin: AllowedOrigins,
+			credentials: true
+		})
+	);
+
     const server = new ApolloServer({
         typeDefs,
         resolvers,
