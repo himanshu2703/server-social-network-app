@@ -7,7 +7,7 @@ import resolvers from './graphql/resolvers';
 
 const auth = require('./middleware/auth');
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const app: Application = express();
 
