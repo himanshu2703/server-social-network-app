@@ -1,1 +1,1 @@
-export const AllowedOrigins = ["http://localhost:3000","https://studio.apollographql.com"]
+export const AllowedOrigins = ["http://localhost:3000","https://studio.apollographql.com", "https://client-social-network-app.herokuapp.com"]
